@@ -51,7 +51,11 @@ const HeroSection = () => {
         >
           <span className="w-2 h-2 rounded-full bg-ngo-orange-500 animate-glow-pulse" />
           <span className="text-sm font-medium text-muted-foreground">
+<<<<<<< HEAD
             Making a difference since 2026
+=======
+            Making a difference since 2010
+>>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
           </span>
         </motion.div>
 
