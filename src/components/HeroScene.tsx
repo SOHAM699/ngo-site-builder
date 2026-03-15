@@ -4,6 +4,9 @@ import * as THREE from "three";
 
 const PARTICLE_COUNT = 200;
 const CONNECTION_DISTANCE = 2.5;
+// Pre-calculate maximum possible lines (n * (n - 1) / 2)
+// We limit it practically to save memory, assuming not ALL particles connect at once
+const MAX_LINES = 3000; 
 
 function ParticleNetwork() {
   const meshRef = useRef<THREE.InstancedMesh>(null);
@@ -29,9 +32,15 @@ function ParticleNetwork() {
     return { pos, vel };
   }, []);
 
+  // Pre-allocate reusable Three.js objects to prevent memory leaks in useFrame
   const dummy = useMemo(() => new THREE.Object3D(), []);
+  const tempColor = useMemo(() => new THREE.Color(), []);
   const purpleColor = useMemo(() => new THREE.Color("#8B5CF6"), []);
   const orangeColor = useMemo(() => new THREE.Color("#F97316"), []);
+  
+  // Pre-allocate arrays for line geometry
+  const linePositions = useMemo(() => new Float32Array(MAX_LINES * 6), []);
+  const lineColors = useMemo(() => new Float32Array(MAX_LINES * 8), []);
 
   useFrame(({ clock, pointer }) => {
     if (!meshRef.current || !linesRef.current) return;
@@ -40,8 +49,8 @@ function ParticleNetwork() {
     mouseRef.current.y = pointer.y * viewport.height * 0.5;
 
     const time = clock.getElapsedTime();
-    const linePositions: number[] = [];
-    const lineColors: number[] = [];
+    let lineIndex = 0;
+    let colorIndex = 0;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const p = particles.pos[i];
@@ -66,14 +75,16 @@ function ParticleNetwork() {
       if (Math.abs(p.y) > 5) v.y *= -1;
       if (Math.abs(p.z) > 4) v.z *= -1;
 
+      // Update Instance matrix
       const scale = 0.03 + Math.sin(time + i) * 0.01;
       dummy.position.set(p.x, p.y, p.z);
       dummy.scale.setScalar(scale);
       dummy.updateMatrix();
       meshRef.current.setMatrixAt(i, dummy.matrix);
 
-      const color = new THREE.Color().lerpColors(purpleColor, orangeColor, i / PARTICLE_COUNT);
-      meshRef.current.setColorAt(i, color);
+      // Update Instance color
+      tempColor.lerpColors(purpleColor, orangeColor, i / PARTICLE_COUNT);
+      meshRef.current.setColorAt(i, tempColor);
     }
 
     // Connections
@@ -84,30 +95,54 @@ function ParticleNetwork() {
         const d = Math.sqrt(
           (a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2
         );
-        if (d < CONNECTION_DISTANCE) {
-          linePositions.push(a.x, a.y, a.z, b.x, b.y, b.z);
+
+        if (d < CONNECTION_DISTANCE && lineIndex < MAX_LINES * 6) {
+          // Add positions
+          linePositions[lineIndex++] = a.x;
+          linePositions[lineIndex++] = a.y;
+          linePositions[lineIndex++] = a.z;
+          linePositions[lineIndex++] = b.x;
+          linePositions[lineIndex++] = b.y;
+          linePositions[lineIndex++] = b.z;
+
+          // Add colors with alpha based on distance
           const alpha = 1 - d / CONNECTION_DISTANCE;
-          lineColors.push(
-            0.55, 0.36, 0.96, alpha,
-            0.98, 0.45, 0.09, alpha
-          );
+          lineColors[colorIndex++] = 0.55; // R
+          lineColors[colorIndex++] = 0.36; // G
+          lineColors[colorIndex++] = 0.96; // B
+          lineColors[colorIndex++] = alpha; // A
+          
+          lineColors[colorIndex++] = 0.98; // R
+          lineColors[colorIndex++] = 0.45; // G
+          lineColors[colorIndex++] = 0.09; // B
+          lineColors[colorIndex++] = alpha; // A
         }
       }
     }
 
+    // Update lines geometry optimally
     const geom = linesRef.current.geometry;
-    geom.setAttribute("position", new THREE.Float32BufferAttribute(linePositions, 3));
-    geom.setAttribute("color", new THREE.Float32BufferAttribute(lineColors, 4));
-    geom.attributes.position.needsUpdate = true;
-    geom.attributes.color.needsUpdate = true;
+    geom.setDrawRange(0, lineIndex / 3);
+    
+    // Only update the attributes if they exist
+    if (!geom.attributes.position) {
+      geom.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+      geom.setAttribute('color', new THREE.BufferAttribute(lineColors, 4));
+    } else {
+      (geom.attributes.position as THREE.BufferAttribute).copyArray(linePositions);
+      (geom.attributes.color as THREE.BufferAttribute).copyArray(lineColors);
+      geom.attributes.position.needsUpdate = true;
+      geom.attributes.color.needsUpdate = true;
+    }
 
+    // Tell R3F to update the instances
     meshRef.current.instanceMatrix.needsUpdate = true;
     if (meshRef.current.instanceColor) meshRef.current.instanceColor.needsUpdate = true;
   });
 
   return (
     <>
-      <instancedMesh ref={meshRef} args={[undefined, undefined, PARTICLE_COUNT]}>
+      <instancedMesh ref={meshRef} args={[null as any, null as any, PARTICLE_COUNT]}>
         <sphereGeometry args={[1, 8, 8]} />
         <meshBasicMaterial transparent opacity={0.8} />
       </instancedMesh>
