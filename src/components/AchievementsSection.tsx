@@ -19,7 +19,7 @@ const achievements = [
   },
   {
     title: "Human Safety & Protection",
-    description: "Our team provides #AccessToJustice by securing Domestic Safety protection orders for survivors of violence. We also champion Prison Reform, providing a vital legal shield for those trapped in prolonged pre-trial detention simply because they lack the means to fight their cases.",
+    description: "Our team provides Access to Justice by securing Domestic Safety protection orders for survivors of violence. We also champion Prison Reform, providing a vital legal shield for those trapped in prolonged pre-trial detention simply because they lack the means to fight their cases.",
     tag: "Protection",
   },
   {
