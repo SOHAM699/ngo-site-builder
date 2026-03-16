@@ -79,7 +79,7 @@ const AboutSection = () => {
           <div className="about-text flex gap-8">
             {[
               { number: "20+", label: "States" },
-              { number: "350+", label: "Communities" },
+              { number: "120+", label: "Communities" },
               { number: "70+", label: "Branches" },
             ].map((stat) => (
               <div key={stat.label}>
