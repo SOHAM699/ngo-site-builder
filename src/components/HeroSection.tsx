@@ -28,7 +28,8 @@ const HeroSection = () => {
     }
   }, []);
 
-  const words = "Empowering Communities, Transforming Lives".split(" ");
+  const firstPart = "Advocacy. Action.";
+  const gradientPart = "Accountability.";
 
   return (
     <section
@@ -60,13 +61,12 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-6"
           style={{ perspective: "600px" }}
         >
-          {words.map((word, i) => (
-            <span key={i} className="word inline-block mr-[0.3em]" style={{ opacity: 0 }}>
-              <span className={i >= 2 ? "gradient-text" : "text-foreground"}>
-                {word}
-              </span>
-            </span>
-          ))}
+          <span className="word inline-block mr-[0.3em]" style={{ opacity: 0 }}>
+            <span className="text-foreground">{firstPart}</span>
+          </span>
+          <span className="word inline-block" style={{ opacity: 0 }}>
+            <span className="gradient-text"> {gradientPart}</span>
+          </span>
         </h1>
 
         <p

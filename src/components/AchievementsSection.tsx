@@ -5,27 +5,37 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { target: 50000, suffix: "+", label: "Lives Impacted", icon: "❤️" },
+  { target: 1800, suffix: "+", label: "Legal Awareness Campaigns", icon: "🏛️" },
   { target: 120, suffix: "+", label: "Communities Served", icon: "🌍" },
-  { target: 3500, suffix: "+", label: "Active Volunteers", icon: "🤝" },
-  { target: 12, suffix: "M+", label: "Funds Raised ($)", icon: "💰" },
+  { target: 1500, suffix: "+", label: "Active Volunteers", icon: "🤝" },
+  { target: 2, suffix: "M+", label: "Funds Raised (₹)", icon: "💰" },
 ];
 
 const achievements = [
   {
-    title: "Clean Water Initiative",
-    description: "Provided access to clean drinking water for 15,000 people across 8 villages in sub-Saharan Africa.",
-    tag: "Healthcare",
+    title: "Financial & Livelihood Impact",
+    description: "We secure Economic Justice by recovering unpaid wages and protecting Fair Wages for exploited workers. Our advocacy for Land Rights ensures long-term Housing Security, preventing illegal evictions and stabilizing the financial foundations of marginalized families.",
+    tag: "Finance",
   },
   {
-    title: "Digital Literacy Program",
-    description: "Trained 5,000+ youth in digital skills, connecting them with remote job opportunities worldwide.",
-    tag: "Education",
+    title: "Human Safety & Protection",
+    description: "Our team provides #AccessToJustice by securing Domestic Safety protection orders for survivors of violence. We also champion Prison Reform, providing a vital legal shield for those trapped in prolonged pre-trial detention simply because they lack the means to fight their cases.",
+    tag: "Protection",
   },
   {
-    title: "Women's Empowerment",
-    description: "Launched micro-finance programs supporting 2,000 women entrepreneurs in South Asia.",
-    tag: "Economic",
+    title: "Community Empowerment",
+    description: "Through literacy workshops, we build Legal Awareness so individuals can navigate the law independently. We prioritize Mediation First as a tool for Peaceful Settlement, resolving local disputes quickly and keeping families out of the expensive and exhausting court system.",
+    tag: "Empower",
+  },
+  {
+    title: "Systemic Change",
+    description: "We drive Systemic Impact by winning landmark 'test cases' that establish new Case Law precedents. By advocating for Policy Reform, we move the legal needle toward a future where the law serves as a tool for equality rather than a barrier for the poor.",
+    tag: "System",
+  },
+  {
+    title: "Institutional Accountability",
+    description: "We foster Good Governance by filing Public Interest Litigation to hold corrupt officials and predatory corporations accountable. Through strict Institutional Oversight, we ensure that government schemes and public services actually reach the marginalized communities they were designed to serve.",
+    tag: "Accountability",
   },
 ];
 

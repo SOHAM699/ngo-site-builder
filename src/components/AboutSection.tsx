@@ -68,6 +68,9 @@ const AboutSection = () => {
             <span className="gradient-text">Restoring Dignity</span>
           </h2>
           <p className="about-text text-lg text-muted-foreground mb-6 leading-relaxed">
+            Established in <strong className="font-bold text-foreground">2025</strong>, Right to Roots works to ensure justice and equal rights for every individual in society.
+          </p>
+          <p className="about-text text-lg text-muted-foreground mb-6 leading-relaxed">
             In a perfect world, the law is a shield that protects everyone equally. In reality, that shield is often hidden behind a paywall. At <strong className="font-bold text-foreground">Right to Roots</strong>, we believe that your bank balance should never determine your legal outcome.
           </p>
           <p className="about-text text-lg text-muted-foreground mb-8 leading-relaxed">
