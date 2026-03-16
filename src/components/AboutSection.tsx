@@ -64,7 +64,6 @@ const AboutSection = () => {
             About Us
           </p>
           <h2 className="about-text text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
-<<<<<<< HEAD
             Defending Rights ,<br />
             <span className="gradient-text">Restoring Dignity</span>
           </h2>
@@ -79,25 +78,6 @@ const AboutSection = () => {
               { number: "20+", label: "States" },
               { number: "350+", label: "Communities" },
               { number: "70+", label: "Branches" },
-=======
-            Building Bridges,<br />
-            <span className="gradient-text">Changing Lives</span>
-          </h2>
-          <p className="about-text text-lg text-muted-foreground mb-6 leading-relaxed">
-            Founded in 2010, CommunityBridge began with a simple belief: every person
-            deserves the opportunity to thrive. What started as a small group of passionate
-            volunteers has grown into a global movement spanning 30+ countries.
-          </p>
-          <p className="about-text text-lg text-muted-foreground mb-8 leading-relaxed">
-            We work at the intersection of education, healthcare, and sustainable development —
-            creating programs that empower communities to build their own futures.
-          </p>
-          <div className="about-text flex gap-8">
-            {[
-              { number: "30+", label: "Countries" },
-              { number: "14", label: "Years" },
-              { number: "500+", label: "Partners" },
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-3xl font-display font-bold gradient-text">{stat.number}</p>
@@ -130,8 +110,4 @@ const AboutSection = () => {
   );
 };
 
-<<<<<<< HEAD
 export default AboutSection;
-=======
-export default AboutSection;
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3

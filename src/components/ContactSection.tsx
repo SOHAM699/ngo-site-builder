@@ -143,15 +143,9 @@ const ContactSection = () => {
               <h3 className="text-xl font-display font-bold text-foreground mb-6">Contact Information</h3>
               <div className="space-y-5">
                 {[
-<<<<<<< HEAD
                   { icon: "📍", label: "Address", value: "KIT's College of Engineering, Kolhapur, 416 234" },
                   { icon: "📧", label: "Email", value: "righttoroots.org@gmail.com" },
                   { icon: "📞", label: "Phone", value: "+8181808080" },
-=======
-                  { icon: "📍", label: "Address", value: "123 Community Lane, Impact City, IC 10001" },
-                  { icon: "📧", label: "Email", value: "hello@communitybridge.org" },
-                  { icon: "📞", label: "Phone", value: "+1 (555) 123-4567" },
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
                   { icon: "🕐", label: "Hours", value: "Mon–Fri, 9:00 AM – 6:00 PM" },
                 ].map((info) => (
                   <div key={info.label} className="flex items-start gap-4">

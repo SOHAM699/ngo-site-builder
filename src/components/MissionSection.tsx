@@ -114,7 +114,6 @@ function MissionNodes({ progress }: { progress: { value: number } }) {
 
 const milestones = [
   {
-<<<<<<< HEAD
     title: "Defend",
     description: "We provide expert legal representation for those facing unfair treatment in housing,labor, and family courts.",
   },
@@ -129,22 +128,6 @@ const milestones = [
   {
     title: "Sustain",
     description: "We work to restore the social and economic foundations of families who have been displaced or disenfranchised by legal gaps.",
-=======
-    title: "Identify",
-    description: "We identify communities in need through research, local partnerships, and on-the-ground assessments.",
-  },
-  {
-    title: "Connect",
-    description: "We connect resources, volunteers, and expertise to create tailored solutions for each community.",
-  },
-  {
-    title: "Empower",
-    description: "We empower local leaders and organizations to take ownership of sustainable development initiatives.",
-  },
-  {
-    title: "Transform",
-    description: "We measure impact and share results to inspire others and scale what works globally.",
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
   },
 ];
 
@@ -220,17 +203,10 @@ const MissionSection = () => {
               Our Mission
             </p>
             <h2 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4">
-<<<<<<< HEAD
               Your Roots,Your Rights,<span className="gradient-text">Our Mission.</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               "Scroll to see how we Defend, Educate, Advocate, and Sustain—transforming legal vulnerability into lifelong security"
-=======
-              How We <span className="gradient-text">Create Change</span>
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Scroll to see how isolated communities transform into connected, thriving networks
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
             </p>
           </div>
         </div>

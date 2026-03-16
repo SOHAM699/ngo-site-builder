@@ -40,7 +40,6 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <button onClick={() => scrollTo("#home")} className="flex items-center gap-2 group">
-<<<<<<< HEAD
           <div className="w-15 h-15 rounded-xl flex items-center justify-center font-display font-bold text-lg group-hover:scale-110 transition-transform overflow-hidden">
             {/* Added img tag here */}
             <img 
@@ -51,13 +50,6 @@ const Navbar = () => {
           </div>
           <span className="font-display font-bold text-xl text-foreground">
             Right to <span className="text-ngo-orange-500"> Roots</span>
-=======
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-ngo-purple-600 to-ngo-orange-500 flex items-center justify-center text-white font-display font-bold text-lg group-hover:scale-110 transition-transform">
-            CB
-          </div>
-          <span className="font-display font-bold text-xl text-foreground">
-            Community<span className="text-ngo-orange-500">Bridge</span>
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
           </span>
         </button>
 
@@ -135,8 +127,4 @@ const Navbar = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar;
->>>>>>> 22146cd5466ea075142a680c2568081f05e3f3d3
