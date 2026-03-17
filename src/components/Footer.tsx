@@ -79,7 +79,7 @@ const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Designed & Devloped By Harsh Potdar 
+            © {new Date().getFullYear()} Designed & Devloped By Soham Pharande 
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <button className="hover:text-foreground transition-colors">Privacy Policy</button>
