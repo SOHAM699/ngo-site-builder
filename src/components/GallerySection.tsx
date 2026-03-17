@@ -6,14 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const galleryItems = [
-  { id: 1, title: "Community Workshop", caption: "Teaching digital skills in rural Kenya", aspect: "aspect-[4/5]" },
-  { id: 2, title: "Water Project", caption: "New well installation in Bangladesh", aspect: "aspect-square" },
-  { id: 3, title: "Youth Program", caption: "Leadership training for teenagers", aspect: "aspect-[3/4]" },
-  { id: 4, title: "Healthcare Camp", caption: "Free medical checkups in remote areas", aspect: "aspect-[4/3]" },
-  { id: 5, title: "Tree Planting", caption: "Environmental restoration project in Brazil", aspect: "aspect-[3/4]" },
-  { id: 6, title: "School Opening", caption: "New school inauguration in Nepal", aspect: "aspect-square" },
-  { id: 7, title: "Women's Workshop", caption: "Artisan skills for economic empowerment", aspect: "aspect-[4/5]" },
-  { id: 8, title: "Volunteer Day", caption: "Community cleanup and bonding event", aspect: "aspect-[3/4]" },
+  { id: 1, title: "Assurance", caption: "Your Case. Our Commitment.", aspect: "aspect-[4/5]" },
+  { id: 2, title: "Workshops", caption: "Empowering Rural Voices: Mastering the legal tools you need to protect your family, your land, and your livelihood", aspect: "aspect-square" },
+  { id: 3, title: "Courtroom Command", caption: "Developing the essential skills to analyze evidence, present compelling arguments, and achieve timely justice in the courtroom.", aspect: "aspect-[3/4]" },
+  { id: 4, title: "The Personal Justice Clinic", caption: "A private, one-on-one session to demystify the legal system and provide you with a clear roadmap for protecting your individual rights.", aspect: "aspect-[4/3]" },
+  { id: 5, title: "Rights Ambassadors", caption: "Bridging the gap between complex legal systems and everyday citizens through compassionate guidance and grassroots outreach", aspect: "aspect-[3/4]" },
+  { id: 6, title: "Youth Program", caption: "Empowering the next generation of leaders to master their rights and advocate for justice.", aspect: "aspect-square" },
+  { id: 7, title: "Know Your Power", caption: "Turning legal knowledge into a shield for the vulnerable and a tool for the future of our community", aspect: "aspect-[4/5]" },
+  { id: 8, title: "The Litigation Core", caption: "A specialized team of legal experts dedicated to navigating court procedures and delivering high-impact advocacy for justice", aspect: "aspect-[3/4]" },
 ];
 
 const images = [
