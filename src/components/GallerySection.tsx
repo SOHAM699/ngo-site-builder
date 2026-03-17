@@ -16,15 +16,15 @@ const galleryItems = [
   { id: 8, title: "Volunteer Day", caption: "Community cleanup and bonding event", aspect: "aspect-[3/4]" },
 ];
 
-const colors = [
-  "from-ngo-purple-500 to-ngo-purple-700",
-  "from-ngo-orange-400 to-ngo-orange-600",
-  "from-ngo-purple-600 to-ngo-orange-500",
-  "from-ngo-purple-400 to-ngo-purple-600",
-  "from-ngo-orange-500 to-ngo-purple-500",
-  "from-ngo-purple-500 to-ngo-orange-400",
-  "from-ngo-orange-600 to-ngo-purple-600",
-  "from-ngo-purple-700 to-ngo-orange-500",
+const images = [
+  "/image1.jpeg",
+  "/image2.png",
+  "/image3.jpeg",
+  "/image4.jpeg",
+  "/image5.webp",
+  "/image6.jpeg",
+  "/image7.jpeg",
+  "/image8.jpeg",
 ];
 
 const GallerySection = () => {
@@ -79,11 +79,11 @@ const GallerySection = () => {
               className="gallery-item break-inside-avoid cursor-pointer group"
               onClick={() => setSelected(item.id)}
             >
-              <div className={`relative ${item.aspect} rounded-2xl overflow-hidden bg-gradient-to-br ${colors[i]} transition-transform duration-300 group-hover:scale-[1.02]`}>
+          <div 
+            className={`relative ${item.aspect} rounded-2xl overflow-hidden bg-cover bg-center transition-transform duration-300 group-hover:scale-[1.02]`}
+            style={{ backgroundImage: `url(${images[i]})` }}
+          >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
                 </div>
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -121,10 +121,10 @@ const GallerySection = () => {
                 if (!item) return null;
                 return (
                   <>
-                    <div className={`aspect-video rounded-2xl bg-gradient-to-br ${colors[idx]} flex items-center justify-center`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                    <div 
+                      className="aspect-video rounded-2xl bg-cover bg-center flex items-center justify-center"
+                      style={{ backgroundImage: `url(${images[idx]})` }}
+                    >
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-display font-bold text-foreground mb-2">{item.title}</h3>
