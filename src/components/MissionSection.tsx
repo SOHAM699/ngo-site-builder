@@ -123,7 +123,7 @@ const milestones = [
   },
   {
     title: "Advocate",
-    description: "We work with lawmakers to fix the <b>broken rungs</b> in the legal ladder that keep people in cycles of poverty.",
+    description: "We work with lawmakers to fix the Broken Rungs in the legal ladder that keep people in cycles of poverty.",
   },
   {
     title: "Sustain",

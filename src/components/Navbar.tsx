@@ -69,7 +69,7 @@ const Navbar = () => {
             onClick={() => scrollTo("#contact")}
             className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-ngo-purple-600 to-ngo-orange-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-ngo-purple-600/30 transition-all hover:scale-105"
           >
-            Donate Now
+            Join Us
           </button>
         </div>
 

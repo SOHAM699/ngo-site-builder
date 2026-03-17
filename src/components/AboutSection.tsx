@@ -93,19 +93,15 @@ const AboutSection = () => {
         {/* Image placeholder */}
         <div className="about-image" style={{ perspective: "800px" }}>
           <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
-            <div className="absolute inset-0 bg-gradient-to-br from-ngo-purple-600/20 to-ngo-orange-500/20" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-ngo-purple-500 to-ngo-orange-500 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+                <div className="w-35 h-35 mx-auto mb-4 rounded-full flex items-center justify-center">
+                  <img src="/NGO_logo.png" alt="" /> 
                 </div>
                 <p className="font-display font-semibold text-foreground text-lg">Our Community</p>
                 <p className="text-sm text-muted-foreground">Growing stronger together</p>
               </div>
             </div>
-            <div className="absolute inset-0 border-2 border-ngo-purple-300/20 rounded-3xl" />
           </div>
         </div>
       </div>
