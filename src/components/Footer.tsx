@@ -67,7 +67,7 @@ const Footer = () => {
             <div className="flex gap-2">
               <input
                 type="email"
-                placeholder="Fu*k uuuuu !!!!!!!!!!!"
+                placeholder="Your email"
                 className="flex-1 px-4 py-2.5 rounded-xl bg-background border border-border focus:border-ngo-purple-500 outline-none text-sm text-foreground"
               />
               <button className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-ngo-purple-600 to-ngo-orange-500 text-white text-sm font-semibold hover:shadow-lg transition-all">
